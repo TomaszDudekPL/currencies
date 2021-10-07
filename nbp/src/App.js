@@ -3,7 +3,7 @@ import Layout from "./layout/Layout";
 import Currencies from "./pages/Currencies";
 
 const ROUTES = {
-    base: "http://api.nbp.pl/api/",
+    api: "http://api.nbp.pl/api/exchangerates/tables/a",
     first_route : "/",
     not_found_route : "*",
     currencies_route : "/currencies",

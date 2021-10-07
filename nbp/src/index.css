@@ -39,6 +39,7 @@ p {
   padding: 0.5rem;
   border: 1px solid #285e16;
   cursor: pointer;
+  width: 7rem;
 }
 
 .btn:hover,
@@ -60,6 +61,7 @@ p {
   background-color: #285e16;
   color: white;
   border-color:#c8f1c8;
+  width: 7rem;
 }
 
 .form-control {
