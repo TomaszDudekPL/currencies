@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import {Route, Switch, Redirect} from 'react-router-dom';
+import Layout from "./layout/Layout";
+import Currencies from "./pages/Currencies";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const ROUTES = {
+    base: "http://api.nbp.pl/api/",
+    first_route : "/",
+    not_found_route : "*",
+    currencies_route : "/currencies",
+    favorites_route : "/favorites"
+}
+
+const App = () => {
+    return (
+        <Layout routes={ROUTES}>
+            <Switch>
+                <Route path={ROUTES.first_route} exact>
+                    <Redirect to={ROUTES.currencies_route} />
+                </Route>
+                <Route path={ROUTES.currencies_route} exact>
+                    <Currencies routes={ROUTES}/>
+                </Route>
+            </Switch>
+        </Layout>
+    )
 }
 
 export default App;
