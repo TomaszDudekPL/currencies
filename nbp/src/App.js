@@ -1,9 +1,10 @@
 import {Route, Switch, Redirect} from 'react-router-dom';
 import Layout from "./layout/Layout";
 import Currencies from "./pages/Currencies";
+import Favorites from "./pages/Favorites";
 
 const ROUTES = {
-    api: "http://api.nbp.pl/api/exchangerates/tables/a",
+    api: "http://api.nbp.pl/api/exchangerates/tables/b",
     first_route : "/",
     not_found_route : "*",
     currencies_route : "/currencies",
@@ -19,6 +20,9 @@ const App = () => {
                 </Route>
                 <Route path={ROUTES.currencies_route} exact>
                     <Currencies routes={ROUTES}/>
+                </Route>
+                <Route path={ROUTES.favorites_route} exact>
+                    <Favorites routes={ROUTES}/>
                 </Route>
             </Switch>
         </Layout>

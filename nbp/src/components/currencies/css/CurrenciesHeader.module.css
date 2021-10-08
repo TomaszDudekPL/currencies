@@ -12,3 +12,7 @@
     top: 6rem;
     z-index: 1;
 }
+
+.header span {
+    width: 12.5%;
+}

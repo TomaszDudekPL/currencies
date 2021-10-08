@@ -8,7 +8,7 @@ const Currencies = (props) => {
 
     return (
         <Fragment>
-            <CurrenciesHeader />
+            {content.props.currencies && <CurrenciesHeader />}
             <section>{content}</section>
         </Fragment>
     )
