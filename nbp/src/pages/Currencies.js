@@ -9,16 +9,17 @@ import CurrencyItem from "../components/currencies/CurrencyItem";
 
 const Currencies = (props) => {
 
-    const { error, isLoading, currencies } = useFetch(props.routes.api);
+    const {error, isLoading, currencies, table} = useFetch(props.routes.api);
 
     return (
         <Fragment>
-            {!!currencies.length && <CurrenciesHeader />}
-            {!currencies.length && <NoCurrencies />}
-            {error && <Error error={error} />}
-            {isLoading && <Loading />}
+            {currencies.length > 0 && <CurrenciesHeader/>}
+            {!isLoading && currencies.length === 0 && <NoCurrencies/>}
+            {error && <Error error={error}/>}
+            {isLoading && <Loading/>}
             <section>
-                <CurrenciesList currencies={currencies} item={CurrencyItem}/>
+                {!isLoading && currencies.length > 0 &&
+                <CurrenciesList currencies={currencies} table={table} item={CurrencyItem}/>}
             </section>
         </Fragment>
     )

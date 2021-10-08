@@ -10,8 +10,8 @@ const Favorites = () => {
 
     return (
         <section>
-            {!!favorites.length && <CurrenciesHeader />}
-            <CurrenciesList currencies={favorites} item={FavoriteCurrencyItem}/>
+            {favorites.length > 0 && <CurrenciesHeader />}
+            {favorites.length > 0 ? <CurrenciesList currencies={favorites} item={FavoriteCurrencyItem}/>: 'Nie masz jeszcze żadnych ulubionych.'}
         </section>
     )
 };

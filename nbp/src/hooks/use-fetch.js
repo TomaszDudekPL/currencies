@@ -33,20 +33,6 @@ const useFetch = (url) => {
         fetchBooksHandler();
     }, [fetchBooksHandler]);
 
-    // let content = <p>Nie znaleziono żadnych walut.</p>;
-
-    // if (currencies.length > 0) {
-    //     content = <CurrenciesList currencies={currencies}/>;
-    // }
-
-    // if (error) {
-    //     content = <p>{error}</p>;
-    // }
-    //
-    // if (isLoading) {
-    //     content = <p>Ładuję...</p>;
-    // }
-
     return {
         error,
         isLoading,
