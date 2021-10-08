@@ -29,6 +29,13 @@ const favoritesReducer = (state = initState, action) => {
 
     }
 
+    if(action.type === 'REMOVE') {
+        const updatedItems = state.favorites.filter(item => item.code !== action.code);
+        return {
+            favorites: updatedItems
+        }
+    }
+
     return state;
 
 }

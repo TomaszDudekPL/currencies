@@ -1,13 +1,15 @@
 import {Fragment} from "react";
 import classes from './css/CurrenciesList.module.css';
-import CurrencyItem from './CurrencyItem'
 
 const CurrenciesList = (props) => {
+
+    const Item = props.item;
+
     return (
         <Fragment>
             <ul className={classes.list}>
                 {props.currencies.map(obj => (
-                        <CurrencyItem
+                        <Item
                             currency={obj}
                             key={obj.code}
                             name={obj.currency}

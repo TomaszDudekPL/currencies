@@ -64,6 +64,13 @@ body {
   width: 7rem;
 }
 
+.btn.danger {
+  background-color: #a10a1b;
+  color: white;
+  border-color:#c8f1c8;
+  width: 7rem;
+}
+
 .form-control {
   margin-bottom: 1rem;
 }

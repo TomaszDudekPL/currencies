@@ -6,7 +6,7 @@ const CurrenciesHeader = () => {
             <span>KOD WALUTY</span>
             <span>KURŚ ŚREDNI</span>
             <span>NAZWA WALUTY</span>
-            <span>DO ULUBIONYCH</span>
+            <span>AKCJA</span>
         </header>
     )
 }

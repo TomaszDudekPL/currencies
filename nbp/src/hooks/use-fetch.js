@@ -1,5 +1,4 @@
-import React, {useCallback, useEffect, useState} from "react";
-import CurrenciesList from "../components/currencies/CurrenciesList";
+import {useCallback, useEffect, useState} from "react";
 
 const useFetch = (url) => {
 
@@ -34,21 +33,25 @@ const useFetch = (url) => {
         fetchBooksHandler();
     }, [fetchBooksHandler]);
 
-    let content = <p>Nie znaleziono żadnych walut.</p>;
+    // let content = <p>Nie znaleziono żadnych walut.</p>;
 
-    if (currencies.length > 0) {
-        content = <CurrenciesList currencies={currencies}/>;
-    }
+    // if (currencies.length > 0) {
+    //     content = <CurrenciesList currencies={currencies}/>;
+    // }
 
-    if (error) {
-        content = <p>{error}</p>;
-    }
+    // if (error) {
+    //     content = <p>{error}</p>;
+    // }
+    //
+    // if (isLoading) {
+    //     content = <p>Ładuję...</p>;
+    // }
 
-    if (isLoading) {
-        content = <p>Ładuję...</p>;
-    }
-
-    return content;
+    return {
+        error,
+        isLoading,
+        currencies
+    };
 }
 
 export default useFetch;

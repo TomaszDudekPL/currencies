@@ -1,36 +1,30 @@
-import classes from './css/CurrencyItem.module.css'
-import {useState} from 'react';
+import classes from '.././currencies/css/CurrencyItem.module.css';
 import {useDispatch} from "react-redux";
 import Button from "../Button";
 
-const CurrencyItem = (props) => {
+const FavoriteCurrencyItem = (props) => {
 
     const lowerCaseCode = props.code.toLowerCase();
 
     const DATA_TEST_ID = {
         item: `${lowerCaseCode}-item`,
-        button: `${lowerCaseCode}-add-btn`,
+        button: `${lowerCaseCode}-remove-btn`,
         price: `${lowerCaseCode}-mid-price`,
         name: `${lowerCaseCode}-name`
     };
 
     const dispatch = useDispatch();
 
-    const [added, setAddedState] = useState(false);
-
-    const addToFavoritesHandler = (e) => {
+    const removeFromFavoritesHandler = (e) => {
         e.preventDefault();
-        dispatch({type: 'ADD', currency: props.currency});
-        setAddedState(true);
-        const timer = setTimeout(setAddedState, 500, false);
-        return () => clearTimeout(timer);
+        dispatch({type: 'REMOVE', code: props.code});
     }
 
     const buttonAttr = {
         testId: DATA_TEST_ID.button,
-        styles: added ? 'btn done' : 'btn',
-        clickHandler: addToFavoritesHandler,
-        text: !added ? 'Do ulubionych' : '✓ DODANO!'
+        styles: 'btn danger',
+        clickHandler: removeFromFavoritesHandler,
+        text: 'USUŃ'
     }
 
     return (
@@ -51,4 +45,4 @@ const CurrencyItem = (props) => {
         </li>
     )
 }
-export default CurrencyItem;
+export default FavoriteCurrencyItem;
