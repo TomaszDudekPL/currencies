@@ -1,5 +1,6 @@
 import {Fragment} from "react";
 import classes from './css/CurrenciesList.module.css';
+import CurrenciesHeader from "./CurrenciesHeader";
 
 const CurrenciesList = (props) => {
 
@@ -7,6 +8,7 @@ const CurrenciesList = (props) => {
 
     return (
         <Fragment>
+            <CurrenciesHeader/>
             <ul className={classes.list}>
                 {props.currencies.map(obj => (
                         <Item

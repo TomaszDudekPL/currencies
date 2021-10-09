@@ -22,7 +22,29 @@
 }
 
 .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+}
 
+.content div p {
+    color: #a91c30;
+    font-size: 1.5rem;
+}
+
+.content footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    padding-top: 0.5rem;
+}
+
+.content button {
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1rem;
 }
 
 @media (min-width: 768px) {

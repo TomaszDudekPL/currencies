@@ -31,9 +31,13 @@ const ConfirmationModal = (props) => {
 
     return (
         <Modal onClose={props.onClose}>
-            <div>{warning}</div>
-            <Button attributes={confirmButtonAttributes} />
-            <Button attributes={cancelButtonAttributes} />
+            <div>
+                <p>{warning}</p>
+            </div>
+            <footer>
+                <Button attributes={confirmButtonAttributes}/>
+                <Button attributes={cancelButtonAttributes}/>
+            </footer>
         </Modal>
     )
 };

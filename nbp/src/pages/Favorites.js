@@ -1,7 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
 import CurrenciesList from "../components/currencies/CurrenciesList";
 import FavoriteCurrencyItem from "../components/favorites/FavoriteCurrencyItem";
-import CurrenciesHeader from "../components/currencies/CurrenciesHeader";
 import Button from "../components/Button";
 import ConfirmationModal from "../components/ConfirmationModal";
 
@@ -23,7 +22,7 @@ const Favorites = () => {
         showModalHandler({
             type: 'REMOVE_ALL',
             warning: `Czy jesteś pewny, że chcesz usunąć wszystkie?`,
-            buttonText: 'USUWAM WSZYSTKIE'
+            buttonText: 'USUWAM'
         });
     }
 
@@ -37,7 +36,6 @@ const Favorites = () => {
     return (
         <section>
             {modalIsVisible && <ConfirmationModal onClose={hideModalHandler}/>}
-            {favorites.length > 0 && <CurrenciesHeader/>}
             {favorites.length > 0 ? <CurrenciesList currencies={favorites} modal={showModalHandler}
                                                     item={FavoriteCurrencyItem}/> : 'Nie masz jeszcze żadnych ulubionych walut.'}
             {favorites.length > 0 && <Button attributes={removeAllButtonAttr}/>}

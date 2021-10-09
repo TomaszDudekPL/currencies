@@ -5,16 +5,21 @@ const HeaderNavigation = (props) => {
 
     const {currencies_route, favorites_route} = props.routes;
 
+    const DATA_TEST_ID = {
+        currencies: 'nav-currencies-link',
+        favorites: 'nav-favorites-link'
+    };
+
     return (
         <header className={classes.header}>
             <nav>
                 <ul>
                     <li>
-                        <NavLink activeClassName={classes.active} exact
+                        <NavLink data-testid={DATA_TEST_ID.currencies} activeClassName={classes.active} exact
                                  to={`${currencies_route}`}>WALUTY</NavLink>
                     </li>
                     <li>
-                        <NavLink activeClassName={classes.active} to={favorites_route}>ULUBIONE</NavLink>
+                        <NavLink data-testid={DATA_TEST_ID.favorites} activeClassName={classes.active} to={favorites_route}>ULUBIONE</NavLink>
                     </li>
                 </ul>
             </nav>

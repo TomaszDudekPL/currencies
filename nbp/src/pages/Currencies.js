@@ -1,6 +1,5 @@
 import useFetch from "../hooks/use-fetch";
 import {Fragment} from "react";
-import CurrenciesHeader from "../components/currencies/CurrenciesHeader";
 import Error from "../components/Error";
 import NoCurrencies from "../components/NoCurrencies";
 import Loading from "../components/Loading";
@@ -14,7 +13,6 @@ const Currencies = (props) => {
     return (
         <Fragment>
             <section>
-            {currencies.length > 0 && <CurrenciesHeader/>}
             {!isLoading && currencies.length === 0 && <NoCurrencies/>}
             {error && <Error error={error}/>}
             {isLoading && <Loading/>}
