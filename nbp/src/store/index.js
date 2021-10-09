@@ -36,6 +36,12 @@ const favoritesReducer = (state = initState, action) => {
         }
     }
 
+    if(action.type === 'REMOVE_ALL') {
+        return {
+            favorites: []
+        }
+    }
+
     return state;
 
 }
