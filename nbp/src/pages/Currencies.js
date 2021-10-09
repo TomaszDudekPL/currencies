@@ -13,11 +13,11 @@ const Currencies = (props) => {
 
     return (
         <Fragment>
+            <section>
             {currencies.length > 0 && <CurrenciesHeader/>}
             {!isLoading && currencies.length === 0 && <NoCurrencies/>}
             {error && <Error error={error}/>}
             {isLoading && <Loading/>}
-            <section>
                 {!isLoading && currencies.length > 0 &&
                 <CurrenciesList currencies={currencies} table={table} item={CurrencyItem}/>}
             </section>

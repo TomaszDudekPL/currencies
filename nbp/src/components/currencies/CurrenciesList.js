@@ -11,6 +11,7 @@ const CurrenciesList = (props) => {
                 {props.currencies.map(obj => (
                         <Item
                             currency={obj}
+                            modal={props.modal}
                             key={obj.code}
                             name={obj.currency}
                             code={obj.code}

@@ -1,5 +1,4 @@
 import classes from '.././currencies/css/CurrencyItem.module.css';
-import {useDispatch} from "react-redux";
 import Button from "../Button";
 
 const FavoriteCurrencyItem = (props) => {
@@ -13,17 +12,15 @@ const FavoriteCurrencyItem = (props) => {
         name: `${lowerCaseCode}-name`
     };
 
-    const dispatch = useDispatch();
-
-    const removeFromFavoritesHandler = (e) => {
-        e.preventDefault();
-        dispatch({type: 'REMOVE', code: props.code});
-    }
-
     const buttonAttr = {
         testId: DATA_TEST_ID.button,
         styles: 'btn danger',
-        clickHandler: removeFromFavoritesHandler,
+        clickHandler: props.modal.bind(null, {
+            type:'REMOVE',
+            warning: `Czy jesteś pewny, że chcesz usunąć ten walor?`,
+            buttonText: 'USUŃ',
+            code: props.code
+        }),
         text: 'USUŃ'
     }
 
