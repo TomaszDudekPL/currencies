@@ -12,7 +12,7 @@ const Currencies = (props) => {
 
     return (
         <Fragment>
-            <section>
+            <section data-testid="currencies-list">
             {!isLoading && currencies.length === 0 && <NoCurrencies/>}
             {error && <Error error={error}/>}
             {isLoading && <Loading/>}

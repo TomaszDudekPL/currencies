@@ -5,7 +5,7 @@ import Favorites from "./pages/Favorites";
 import NotFound from "./components/NotFound";
 
 const ROUTES = {
-    api: "http://api.nbp.pl/api/exchangerates/tables/b",
+    api: "http://api.nbp.pl/api/exchangerates/tables/a",
     first_route : "/",
     not_found_route : "*",
     currencies_route : "/currencies",

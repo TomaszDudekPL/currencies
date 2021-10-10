@@ -34,7 +34,7 @@ const Favorites = () => {
     }
 
     return (
-        <section>
+        <section data-testid="favorites-list">
             {modalIsVisible && <ConfirmationModal onClose={hideModalHandler}/>}
             {favorites.length > 0 ? <CurrenciesList currencies={favorites} modal={showModalHandler}
                                                     item={FavoriteCurrencyItem}/> : 'Nie masz jeszcze żadnych ulubionych walut.'}

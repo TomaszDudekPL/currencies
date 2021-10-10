@@ -7,27 +7,28 @@ const HeaderNavigation = (props) => {
 
     const {currencies_route, favorites_route} = props.routes;
     const {favorites} = useSelector(state => state.favoritesReducer);
-    const [btnIsHighlighted, setBtnIsHighlighted] = useState(false);
+    const [badgeIsBumped, setBadgeIsBumped] = useState(false);
 
     const DATA_TEST_ID = {
         currencies: 'nav-currencies-link',
-        favorites: 'nav-favorites-link'
+        favorites: 'nav-favorites-link',
+        badge: 'nav-favorites-badge'
     };
 
-    const numberOfBasketButtonItems = favorites.length;
+    const numberOfFavorites = favorites.length;
 
-    const badgeClasses = `${classes.badge} ${btnIsHighlighted? classes.bump: ''}`;
+    const badgeClasses = `${classes.badge} ${badgeIsBumped? classes.bump: ''}`;
 
     useEffect(() => {
-        if(favorites.length === 0) return;
+        if(numberOfFavorites === 0) return;
 
-        setBtnIsHighlighted(true);
+        setBadgeIsBumped(true);
 
-        const timer = setTimeout(setBtnIsHighlighted, 600, false);
+        const timer = setTimeout(setBadgeIsBumped, 600, false);
 
         return () => clearTimeout(timer);
 
-    }, [favorites]);
+    }, [numberOfFavorites]);
 
     return (
         <header className={classes.header}>
@@ -42,9 +43,11 @@ const HeaderNavigation = (props) => {
                                  to={favorites_route}>
                             ULUBIONE
                         </NavLink>
-                        <span className={badgeClasses}>
-                                {numberOfBasketButtonItems}
+                        <div className={classes.badge}>
+                        <span data-testid={DATA_TEST_ID.badge} className={badgeClasses}>
+                                {numberOfFavorites}
                         </span>
+                        </div>
                     </li>
                 </ul>
             </nav>
