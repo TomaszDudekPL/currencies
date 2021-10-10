@@ -13,10 +13,12 @@ class CurrenciesPage extends Page {
     get pound_list_item () { return $('[data-testid="gbp-item"]')}
 
     open (path) {
+        logFuncName('cyan');
         return super.open(path);
     }
 
     async addThreeToFavorites () {
+        logFuncName('cyan');
         await this.currencies_list.waitForDisplayed();
         await this.dolar_currency_btn.click();
         await this.euro_currency_btn.click();
@@ -24,6 +26,7 @@ class CurrenciesPage extends Page {
     }
 
     async goToFavorites() {
+        logFuncName('cyan');
         await HomePage.favorites_nav_link.click();
         await this.favorites_list.waitForDisplayed();
     }

@@ -5,10 +5,12 @@ export default class Page {
     get favorites_nav_badge () {return $('[data-testid="nav-favorites-badge"]')}
 
     async setWindowSize(width, height) {
+        logFuncName('cyan');
         await browser.setWindowSize(width, height);
     }
 
     async open ({path, width, height}) {
+        logFuncName('cyan');
         await this.setWindowSize(width, height);
         return browser.url(`http://localhost:3000/${path}`);
     }
