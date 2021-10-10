@@ -31,7 +31,7 @@ Requirements:
 
 *Install dependencies:*
 ```
-cd ~./currencies/nbp/e2e
+cd ~./currencies/nbp/test/e2e
 npm install
 ```
 
