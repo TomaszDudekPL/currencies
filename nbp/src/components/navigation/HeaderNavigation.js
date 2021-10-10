@@ -43,8 +43,8 @@ const HeaderNavigation = (props) => {
                                  to={favorites_route}>
                             ULUBIONE
                         </NavLink>
-                        <div className={classes.badge}>
-                        <span data-testid={DATA_TEST_ID.badge} className={badgeClasses}>
+                        <div className={badgeClasses}>
+                        <span data-testid={DATA_TEST_ID.badge} >
                                 {numberOfFavorites}
                         </span>
                         </div>

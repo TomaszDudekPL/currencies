@@ -9,7 +9,7 @@ Requirements:
 
 *Install dependencies:*
 ```
-cd ~/currencies/nbp
+cd ~./currencies/nbp
 npm install
 ```
 
@@ -25,7 +25,7 @@ Requirements:
 
 *Install dependencies:*
 ```
-cd ~./currencies/nbp/test/e2e
+cd ~./currencies/nbp/e2e
 npm install
 ```
 

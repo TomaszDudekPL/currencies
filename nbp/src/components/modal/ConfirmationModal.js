@@ -1,5 +1,5 @@
-import Button from "./Button";
-import Modal from "../layout/Modal";
+import Button from "../Button";
+import Modal from "../../layout/Modal";
 import {useDispatch, useSelector} from "react-redux";
 
 const ConfirmationModal = (props) => {

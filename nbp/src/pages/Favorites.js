@@ -2,7 +2,7 @@ import {useDispatch, useSelector} from "react-redux";
 import CurrenciesList from "../components/currencies/CurrenciesList";
 import FavoriteCurrencyItem from "../components/favorites/FavoriteCurrencyItem";
 import Button from "../components/Button";
-import ConfirmationModal from "../components/ConfirmationModal";
+import ConfirmationModal from "../components/modal/ConfirmationModal";
 
 const Favorites = () => {
 
