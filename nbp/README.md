@@ -18,12 +18,6 @@ npm install
 npm start
 ```
 
-## To start unit tests:
-*In terminal:*
-```
-npm test
-```
-
 ## To start UI tests (end-to-end) tests:
 Requirements:
 

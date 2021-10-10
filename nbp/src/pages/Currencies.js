@@ -8,7 +8,7 @@ import CurrencyItem from "../components/currencies/CurrencyItem";
 
 const Currencies = (props) => {
 
-    const {error, isLoading, currencies, table} = useFetch(props.routes.api);
+    const {error, isLoading, currencies} = useFetch(props.routes.api);
 
     return (
         <Fragment>
@@ -17,7 +17,7 @@ const Currencies = (props) => {
             {error && <Error error={error}/>}
             {isLoading && <Loading/>}
                 {!isLoading && currencies.length > 0 &&
-                <CurrenciesList currencies={currencies} table={table} item={CurrencyItem}/>}
+                <CurrenciesList currencies={currencies} item={CurrencyItem}/>}
             </section>
         </Fragment>
     )
