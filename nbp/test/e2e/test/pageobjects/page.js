@@ -1,13 +1,15 @@
-/**
-* main page object containing all methods, selectors and functionality
-* that is shared across all page objects
-*/
 export default class Page {
-    /**
-    * Opens a sub page of the page
-    * @param path path of the sub page (e.g. /path/to/page.html)
-    */
-    open (path) {
-        return browser.url(`https://the-internet.herokuapp.com/${path}`)
+
+    get currencies_nav_link () { return $('[data-testid="nav-currencies-link"]')}
+    get favorites_nav_link () { return $('[data-testid="nav-favorites-link"]')}
+    get favorites_nav_badge () {return $('[data-testid="nav-favorites-badge"]')}
+
+    async setWindowSize(width, height) {
+        await browser.setWindowSize(width, height);
+    }
+
+    async open ({path, width, height}) {
+        await this.setWindowSize(width, height);
+        return browser.url(`http://localhost:3000/${path}`);
     }
 }
